@@ -9,4 +9,4 @@ This is a basic e-commerce back end utilizing MySQL2, Sequelize, and .env to run
 ## Links
 
 - Repo: https://github.com/JimMason564/E-CommerceBackEnd
-- Walkthrough video: https://drive.google.com/file/d/1gHLAoGzrMzdyGNysDKIngNPOu9cSTg7G/view
+- Walkthrough video: https://drive.google.com/file/d/15h62cQjF824niJp8w2ITB1y5ObqFYxZp/view
