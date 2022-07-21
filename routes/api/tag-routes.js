@@ -3,7 +3,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findAll(
       {
@@ -33,18 +33,7 @@ router.get('/:id', async(req, res) => {
 });
 router.post('/', (req, res) => {
   Tag.create(req.body)
-  .then((tag) => {
-    if (req.body.tagIds.length) {
-      const TagIdArr = req.body.tagIds.map((tag_id) => {
-        return {
-          tag_name,
-        };
-      });
-      return tag.bulkCreate(TagIdArr);
-    }
-    res.status(200).json(tag);
-  })
-  .then((TagIdArr) => res.status(200).json(TagIdArr))
+  .then((tag) => res.status(200).json(tag))
   .catch((err) => {
     console.log(err);
     res.status(400).json(err);
@@ -57,13 +46,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(categoryData => {
-    if (!categoryData[0]) {
-      res.status(404).json({ message: 'No id found'});
-      return;
-    }
-    res.json(dbCategoryData);
-  })
+  .then((tag) => res.status(200).json(tag))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
